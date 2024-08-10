@@ -24,7 +24,7 @@ const Login = ({ setAuth }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${import.meta.env}/api/v1/${role}s/login`,
+        `${import.meta.env.VITE_URL}/api/v1/${role}s/login`,
         { email, password, role },
         {
           withCredentials: true,

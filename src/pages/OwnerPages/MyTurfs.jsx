@@ -8,7 +8,7 @@ function MyTurfs({ currentOwner }) {
     useEffect(() => {
         const fetchTurfData = async () => {
             try {
-                const turfData = await axios.get(`${import.meta.env}/api/v1/owners/get-turf-by-owner-id/${currentOwner.id}`,
+                const turfData = await axios.get(`${import.meta.env.VITE_URL}/api/v1/owners/get-turf-by-owner-id/${currentOwner.id}`,
                     {
                         withCredentials: true,
                         headers: {

@@ -29,7 +29,7 @@ export default function App() {
   const checkAuthenticated = async () => {
     try {
       try {
-        const userAuthRes = await axios.get(`${import.meta.env}/api/v1/users/get-current-user`, {
+        const userAuthRes = await axios.get(`${import.meta.env.VITE_URL}/api/v1/users/get-current-user`, {
           withCredentials: true,
           headers: {
             'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ export default function App() {
       }
 
       try {
-        const ownerAuthRes = await axios.get(`${import.meta.env}/api/v1/owners/get-current-owner`, {
+        const ownerAuthRes = await axios.get(`${import.meta.env.VITE_URL}/api/v1/owners/get-current-owner`, {
           withCredentials: true,
           headers: {
             'Content-Type': 'application/json',

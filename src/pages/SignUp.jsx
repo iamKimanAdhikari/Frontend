@@ -74,7 +74,7 @@ function SignUp() {
 
         try {
             if (emailValidation && phone_no_validation && passwordValidation) {
-                const response = await axios.post(`${import.meta.env}/api/v1/${role}s/register`, {
+                const response = await axios.post(`${import.meta.env.VITE_URL}/api/v1/${role}s/register`, {
                     fullName,
                     username,
                     email,

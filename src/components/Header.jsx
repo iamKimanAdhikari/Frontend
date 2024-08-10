@@ -30,7 +30,7 @@ export default function Header({ authenticatedResponse, setAuth, isAuthenticated
         
         try {
             try {
-                const logoutResponse = await axios.post(`${import.meta.env}/api/v1/users/logout`,{}, {
+                const logoutResponse = await axios.post(`${import.meta.env.VITE_URL}/api/v1/users/logout`,{}, {
                     withCredentials: true,
                     headers: {
                         'Content-Type' : 'application/json',
@@ -41,7 +41,7 @@ export default function Header({ authenticatedResponse, setAuth, isAuthenticated
             }
 
             try {
-                const logoutResponse = await axios.post(`${import.meta.env}/api/v1/owners/logout`,{}, {
+                const logoutResponse = await axios.post(`${import.meta.env.VITE_URL}/api/v1/owners/logout`,{}, {
                     withCredentials: true,
                     headers: {
                         'Content-Type' : 'application/json',

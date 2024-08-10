@@ -36,7 +36,7 @@ export default function BookingLayout({ isAuthenticated, currentUser }) {
         e.preventDefault();
 
         try {
-            const response = await axios.post(`${import.meta.env}/api/v1/bookings/create-booking`,
+            const response = await axios.post(`${import.meta.env.VITE_URL}/api/v1/bookings/create-booking`,
                 {
                     "user_id": currentUser.id,
                     "turf_id": id,
@@ -72,7 +72,7 @@ export default function BookingLayout({ isAuthenticated, currentUser }) {
     useEffect(() => {
         const fetchTimeSlot = async () => {
             try {
-                const bookedTimeSlots = await axios.get(`${import.meta.env}/api/v1/bookings/turf/${id}/booked-time-slots`, {
+                const bookedTimeSlots = await axios.get(`${import.meta.env.VITE_URL}/api/v1/bookings/turf/${id}/booked-time-slots`, {
                     params: {
                         booking_date: selectedDate
                     },
@@ -98,7 +98,7 @@ export default function BookingLayout({ isAuthenticated, currentUser }) {
     useEffect(() => {
         const fetchTurf = async () => {
             try {
-                const turfResponse = await axios.get(`${import.meta.env}/api/v1/turfs/get-turf-by-id/${id}`,
+                const turfResponse = await axios.get(`${import.meta.env.VITE_URL}/api/v1/turfs/get-turf-by-id/${id}`,
                     {
                         withCredentials: true,
                         headers: {
